@@ -164,4 +164,26 @@ Failures:
 
 ### Bundle v2
 
-(To be filled after re-bundling with the revised trial-log.)
+- Bundle v2: `~/workspace/make-fun/six-prog-3/bundle-5-v2.tar.gz`,
+  259,327 bytes, sha256
+  `3b94b74bfa32af89826dd9b000460426d6e9b93c120e98e2e668783459288222`
+  (commit `5d1a8f8`, trial-log revised with real v1 results).
+  Same 0-usage-rows warning as v1 (expected, subagent case).
+- Check v2 (25 Nov 2026 ~14:04 WITA, commit 5d1a8f8): **13 passed,
+  1 failed, 5 skipped, 5 checked at submission.** `thinking_revised`
+  now PASSES (trial-log.md takes final content from 2 messages).
+  `thinking_reproduces` 163/167 lines (97.6%), `thinking_turns` 30.
+  Sole failure: `thinking_priced` (0 usage rows) — NOT fixable from
+  this subagent session; the coordinator re-bundles with usage rows
+  after this run ends (per the CLI's own fix text: the top-level agent
+  runs the SELECT with its own agent_id and each subagent's, bundles
+  taking their sessions, and submits).
+
+### Final handoff note (added after check v2)
+
+- This trial-log entry was appended after check v2 and committed as a
+  further commit; the coordinator's re-bundle (with usage rows) should
+  be taken from the latest HEAD, not from bundle v2. Bundle v2 + check
+  v2 remain the verified evidence for commit `5d1a8f8` (13/1).
+- No submit, no GitHub repo, no push performed (coordinator's job).
+  No skill edited. No credential file read or shown.
